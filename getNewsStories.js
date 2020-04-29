@@ -5,7 +5,7 @@ const fs = require('fs');
   const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    await page.goto('https://www.bbc.co.uk/news'); // make this a variable passed in at run time?
+    await page.goto('https://www.bbc.co.uk/news');
     
     const stories = await page.$$eval('.gs-c-promo-heading__title', arr => arr.map(item => item.outerText));
     
@@ -14,7 +14,7 @@ const fs = require('fs');
     });
   
     stories.forEach(el => {
-      console.log(el);
+      console.log('-------', el, '-------');
     });
 
   await browser.close();
