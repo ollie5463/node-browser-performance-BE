@@ -4,11 +4,13 @@
   "description": "",
   "main": "example.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" ",
+    "getNewsStories": "node getNewsStories.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "minimist": "^1.2.5",
     "node": "^14.0.0",
     "puppeteer": "^2.1.1"
   }
