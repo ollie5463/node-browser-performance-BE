@@ -36,5 +36,11 @@ const runMetricAnalysisAgainstWebsite = (async (website) => {
   // Run node server
   app.listen(4000, () => {
     console.log('metrics: ', metrics)
-  })
+  });
+
+  app.get('/getMetrics', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.status(200).send(metrics);
+  });
+  
 })()
