@@ -18,11 +18,10 @@ const runTraceAgainstWebsite = (async(website) => {
 });
 
 const runMetricAnalysisAgainstWebsite = (async (website) => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch(); 
     const page = await browser.newPage();
     await page.goto(website);
     const metrics = await page.metrics();
-    // console.log(metrics);
 
   await browser.close();
   return metrics;
@@ -35,7 +34,7 @@ const runMetricAnalysisAgainstWebsite = (async (website) => {
   const metrics = await runMetricAnalysisAgainstWebsite(website);
   // Run node server
   app.listen(4000, () => {
-    console.log('metrics: ', metrics)
+    console.log('App listening on port 4000')
   });
 
   app.get('/getMetrics', (req, res) => {
